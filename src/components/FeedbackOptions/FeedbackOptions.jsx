@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class FeedbackOptions extends Component {
-    static propTypes = {};
+    static propTypes = {
+        options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    };
 
     render() {
         const { options, onLeaveFeedback } = this.props;
