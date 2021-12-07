@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
-class Feedback extends Component {
+class FeedbackOptions extends Component {
     static propTypes = {};
 
     render() {
-        const { options } = this.props;
+        const { options, onLeaveFeedback } = this.props;
         return (
             <ul>
                 {options.map(mood => (
-                    <button key={mood}>{mood}</button>
+                    <li key={mood}>
+                        <button onClick={() => onLeaveFeedback(mood)}>
+                            {mood}{' '}
+                        </button>
+                    </li>
                 ))}
             </ul>
         );
     }
 }
-export default Feedback;
+export default FeedbackOptions;

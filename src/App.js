@@ -9,9 +9,14 @@ const options = ['good', 'neutral', 'bad'];
 
 export default class App extends Component {
     state = {
-        good: 1,
+        good: 0,
         neutral: 0,
         bad: 0,
+    };
+    addFeedback = option => {
+        this.setState(prevState => ({
+            [option]: prevState[option] + 1,
+        }));
     };
     countTotalFeedback = () => {
         const { good, neutral, bad } = this.state;
@@ -28,7 +33,10 @@ export default class App extends Component {
         return (
             <div className="App">
                 <Section title="Please leave feedback">
-                    <FeedbackOptions options={options} />
+                    <FeedbackOptions
+                        options={options}
+                        onLeaveFeedback={this.addFeedback}
+                    />
                 </Section>
                 <Section title="Statistics">
                     {total ? (
