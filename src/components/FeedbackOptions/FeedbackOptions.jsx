@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './FeedbackOptions.module.scss';
+
 class FeedbackOptions extends Component {
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
@@ -9,10 +11,13 @@ class FeedbackOptions extends Component {
     render() {
         const { options, onLeaveFeedback } = this.props;
         return (
-            <ul>
+            <ul className={styles.feedback_list}>
                 {options.map(mood => (
-                    <li key={mood}>
-                        <button onClick={() => onLeaveFeedback(mood)}>
+                    <li className={styles.item} key={mood}>
+                        <button
+                            className={styles.button}
+                            onClick={() => onLeaveFeedback(mood)}
+                        >
                             {mood}{' '}
                         </button>
                     </li>

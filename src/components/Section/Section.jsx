@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './Section.module.scss';
+
 class Section extends Component {
     static propTypes = { title: PropTypes.string.isRequired };
 
@@ -8,8 +10,8 @@ class Section extends Component {
         const { title } = this.props;
         const { children } = this.props;
         return (
-            <div>
-                <h2>{title}</h2>
+            <div className={styles.section}>
+                <h2 className={styles.title}>{title}</h2>
                 {children}
             </div>
         );
