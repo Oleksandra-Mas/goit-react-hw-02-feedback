@@ -7,8 +7,7 @@ class Section extends Component {
     static propTypes = { title: PropTypes.string.isRequired };
 
     render() {
-        const { title } = this.props;
-        const { children } = this.props;
+        const { title, children } = this.props;
         return (
             <div className={styles.section}>
                 <h2 className={styles.title}>{title}</h2>
