@@ -6,6 +6,7 @@ import styles from './FeedbackOptions.module.scss';
 class FeedbackOptions extends Component {
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+        onLeaveFeedback: PropTypes.func.isRequired,
     };
 
     render() {
